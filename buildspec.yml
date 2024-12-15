@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "No dependencies to install"
+  build:
+    commands:
+      - echo "No build required - using pre-built files"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: reactapp/dist
