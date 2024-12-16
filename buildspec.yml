@@ -4,6 +4,7 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
+      - aws s3 cp s3://cakecraft24/cakefolder/ ./cakefolder/ --recursive  # Copy the folder from S3
       - cd cakefend/reactapp  # Adjust this path as necessary
       - npm install
 
@@ -14,6 +15,6 @@ phases:
       - npm run build
 
 artifacts:
-  base-directory: cakefend/reactapp/src  # Adjust this path too
+  base-directory: cakefend/reactapp/src  # Adjust this path to where the build output is located
   files:
     - '**/*'
