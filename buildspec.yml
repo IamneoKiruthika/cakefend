@@ -4,16 +4,16 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - cd reactapp  # Change to the directory where package.json is located
-      - npm install  # Install dependencies from reactapp/package.json
+      - cd cakefend/reactapp  # Adjust this path as necessary
+      - npm install
 
   build:
     commands:
       - echo "Building the application"
-      - cd reactapp  # Ensure we're still in the reactapp directory
+      - cd cakefend/reactapp
       - npm run build
 
 artifacts:
-  base-directory: reactapp/build  # Adjust to the correct build output directory
+  base-directory: cakefend/reactapp/src  # Adjust this path too
   files:
     - '**/*'
