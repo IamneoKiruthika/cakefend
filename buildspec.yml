@@ -4,14 +4,16 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - npm install
+      - cd reactapp  # Change to the directory where package.json is located
+      - npm install  # Install dependencies from reactapp/package.json
 
   build:
     commands:
       - echo "Building the application"
-      - npm run build --prefix reactapp
+      - cd reactapp  # Ensure we're still in the reactapp directory
+      - npm run build
 
 artifacts:
-  base-directory: reactapp/dist
+  base-directory: reactapp/src  # Adjust to the correct build output directory
   files:
     - '**/*'
