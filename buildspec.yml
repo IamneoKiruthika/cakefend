@@ -3,21 +3,22 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies"
-      - npm install  # Install dependencies from package.json
+      - echo "Installing Node.js dependencies..."
+      - npm install
 
   build:
     commands:
-      - echo "Building the application"
-      - npm run build  # Build the React application (this generates the build folder)
-      - echo "Build completed"
+      - echo "Starting the React build process..."
+      - npm run build
 
   post_build:
     commands:
-      - echo "Zipping the build output"
-      - zip -r build_output.zip build/*  # The output is in the build folder, not dist
+      - echo "Build completed successfully!"
+      - echo "Contents of the build folder:"
+      - ls -la build/
 
 artifacts:
   files:
-    - build_output.zip  # Specify the zip file to be uploaded to S3
-  discard-paths: no  # Keep the directory structure when uploading to S3
+    - '**/*'
+  base-directory: build
+  discard-paths: yes
