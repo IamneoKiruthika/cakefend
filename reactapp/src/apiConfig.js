@@ -1,4 +1,4 @@
 
-const API_BASE_URL = 'http://54.175.21.217:8080';
+const API_BASE_URL = 'https://uw724981kk.execute-api.us-east-1.amazonaws.com/backend';
 
 export default API_BASE_URL;
